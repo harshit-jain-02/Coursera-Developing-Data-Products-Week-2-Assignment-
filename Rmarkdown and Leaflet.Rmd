@@ -1,0 +1,34 @@
+---
+title: "Coursera-Developing Data Products-Week 2-Assignment"
+author: "Harshit Jain"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## Rmarkdown and Leaflet 
+### Let’s create a map that shows the Taj Mahal in Agra, India.
+
+Date: `r Sys.Date()`
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Load the Library Leaflet 
+```{r}   
+library(leaflet)
+```
+
+### Create the Map
+```{r}   
+my_map <- leaflet() %>%
+addTiles()
+my_map
+```
+### Create a link to the official site of Taj Mahal from where we could get relevant information.
+```{r}   
+TajMahal <- c("<a href= 'https://www.tajmahal.gov.in/view_taj.html' >Taj Mahal</a>")
+leaflet() %>%
+addTiles() %>%
+addMarkers(lat=27.173891, lng=78.042068, popup = TajMahal)
+```
